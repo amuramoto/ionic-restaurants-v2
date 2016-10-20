@@ -13,6 +13,8 @@ import { Geolocation } from 'ionic-native';
 @Injectable()
 export class RestaurantService {
   
+  searchTerm: string = 'Restaurants';
+
   constructor(public http: Http, public platform: Platform) {
   
   }
@@ -47,6 +49,13 @@ export class RestaurantService {
       .map(res => res.json())      
   }
 
+  setSearchTerm(searchTerm: string) {
+    this.searchTerm = searchTerm;
+  }
+
+  getSearchTerm() {
+    return this.searchTerm;
+  }
 
   getArray(size): Array<any> {
     return new Array(size);

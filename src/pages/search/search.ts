@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Platform } from 'ionic-angular';
+import { NavController, Platform, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/Rx';
 import { RestaurantService } from '../../providers/restaurant-service';
@@ -11,15 +11,26 @@ import { RestaurantService } from '../../providers/restaurant-service';
 export class Search {
 
   restaurants: Array<Object>;
-  searchTerm: string = 'Restaurants';
+  searchTerm: string;
 
-  constructor(public navCtrl: NavController, public restaurantService: RestaurantService) {
-  
+  constructor(public navCtrl: NavController, 
+              public restaurantService: RestaurantService,
+              public navParams: NavParams) {
+    
   }
 
 
-  ionViewWillEnter() {
-    this.restaurantService.getRestaurants()
+  ionViewWillEnter() {    
+    this.searchTerm = this.restaurantService.getSearchTerm();
+    this.getRestaurants();
+  }
+
+  ionViewDidEnter() {
+    console.log(this.navParams.data);
+  }
+
+  getRestaurants() {
+    this.restaurantService.getRestaurants(this.searchTerm)
       .subscribe(res => this.restaurants = res);
   }
 

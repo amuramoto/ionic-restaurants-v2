@@ -19,8 +19,8 @@ export class Nearby {
   constructor(public navCtrl: NavController, public restaurantService: RestaurantService) {
     this.searchTerms = [
       {'term': 'Restaurants', 'icon': 'restaurant'},
-      {'term': 'Bars', 'icon': 'beer'},
-      {'term': 'Coffee & Tea', 'icon': 'cafe'}      
+      {'term': 'Beer', 'icon': 'beer'},
+      {'term': 'Coffee', 'icon': 'cafe'}      
     ]
   }
 
@@ -30,6 +30,7 @@ export class Nearby {
   }
 
   search(searchTerm?: string) {
+    this.restaurantService.setSearchTerm(searchTerm);
     this.navCtrl.parent.select(1);
   }
 
