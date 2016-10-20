@@ -1,0 +1,35 @@
+page-nearby {
+
+  ion-content {  
+    background-color: #EEEEEE!important;
+  }
+
+  ion-list {
+    margin: 10px 0px 10px 0px!important;
+  }
+
+  ion-card {
+    margin: 12px 0px 12px 0px!important;    
+    width: 100%!important;
+  }
+
+  img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;    
+  }
+
+  ion-icon[name="restaurant"],
+  ion-icon[name="cafe"],
+  ion-icon[name="beer"]
+  {
+    font-size: 25px;
+    margin-right: 10px;
+  }
+
+  ion-icon[name="ionitron"] {
+    font-size: 35px;
+    color: #C4DAFF;
+  }
+
+}
