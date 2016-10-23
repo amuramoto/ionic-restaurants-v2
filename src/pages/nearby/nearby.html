@@ -20,7 +20,7 @@
       {{searchTerm.term}}
     </ion-item>
   </ion-list>
-  <ion-card *ngFor="let restaurant of restaurants">
+  <ion-card *ngFor="let restaurant of restaurants" (tap)="showDetails(restaurant)">
     <img [src]="restaurant.photos[0].original">
     <ion-card-content>        
       <ion-card-title>

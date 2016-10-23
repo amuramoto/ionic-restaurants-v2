@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-
+import { NavController, NavParams } from 'ionic-angular';
+import { Review } from '../../components/review/review';
 /*
   Generated class for the Details page.
 
@@ -13,10 +13,20 @@ import { NavController } from 'ionic-angular';
 })
 export class Details {
 
-  constructor(public navCtrl: NavController) {}
+  restaurant: any;
+  stars: Array<any> = new Array(5);
 
-  ionViewDidLoad() {
-    console.log('Hello Details Page');
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams) {
+    this.restaurant = this.navParams.data;
+  }
+
+
+  isHighlighted(index: number) {
+    if (this.restaurant.rating >= index) {
+      return true;
+    }
+    return false;
   }
 
 }

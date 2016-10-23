@@ -1,12 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
-import { NavController, Tabs } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
 import { RestaurantService } from '../../providers/restaurant-service';
-/*
-  Generated class for the Nearby page.
+import { Details } from '../details/details';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-nearby',
   templateUrl: 'nearby.html'
@@ -19,7 +15,7 @@ export class Nearby {
   constructor(public navCtrl: NavController, public restaurantService: RestaurantService) {
     this.searchTerms = [
       {'term': 'Restaurants', 'icon': 'restaurant'},
-      {'term': 'Beer', 'icon': 'beer'},
+      {'term': 'Bars', 'icon': 'beer'},
       {'term': 'Coffee', 'icon': 'cafe'}      
     ]
   }
@@ -32,6 +28,10 @@ export class Nearby {
   search(searchTerm?: string) {
     this.restaurantService.setSearchTerm(searchTerm);
     this.navCtrl.parent.select(1);
+  }
+
+  showDetails(details: Object) {
+    this.navCtrl.push(Details, details);
   }
 
 }

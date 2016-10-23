@@ -13,6 +13,26 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <div class="info">
+    <h2>{{restaurant.name}}</h2>
+    <p>
+      <ion-icon name="star" *ngFor="let star of stars; let i=index" [ngClass]="{'highlight': isHighlighted(i)}"></ion-icon>
+      {{restaurant.reviewCount}} Reviews
+    </p>
+    <p>{{restaurant.address}}, {{restaurant.city}}</p>
+    <p>{{restaurant.categories}}</p>
+  </div>
+  
+  <div class="photos">
+    <h3>Pictures</h3>
+    <ion-scroll scrollX="true">
+      <img [src]="photo.thumbnail" *ngFor="let photo of restaurant.photos">
+    </ion-scroll>
+  </div>
+  
+  <div class="reviews">
+    <h3>Reviews</h3>
+    <review *ngFor="let review of restaurant.reviews" [reviewDetails]="review"></review>
+  </div>
 </ion-content>

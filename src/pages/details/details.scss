@@ -1,3 +1,50 @@
 page-details {
+  
+  ion-content {
+    background-color: #EEEEEE!important;
+  }
 
+  .highlight {
+    color: red;
+  }
+
+  .info {
+    padding: 10px 15px;
+    margin: 10px 0px;
+    background-color: #FFFFFF;
+  }
+
+  .photos {    
+
+    margin-bottom: 10px;
+
+    img {
+      margin: 0px 5px;
+      display: inline-block;
+      width: 75px;
+      height: 75px;
+      object-fit: cover;
+    }
+  }
+
+  ion-scroll {
+    width: 100%;
+    height: 75px;
+    white-space: nowrap;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .reviews, .photos {
+    
+    background-color: #FFFFFF;
+    padding: 20px 0px;
+
+    h3 {
+      margin-top: 0px;
+      padding-left: 15px;
+      margin-bottom: 15px;
+    }
+  }
 }

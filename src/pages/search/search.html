@@ -6,17 +6,24 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="ionic">
     <ion-title>Search</ion-title>
   </ion-navbar>
-
+  <ion-searchbar [(ngModel)]="searchTerm" (search)="getRestaurants()"></ion-searchbar>
 </ion-header>
 
 
-<ion-content>
-  <ion-searchbar [(ngModel)]="searchTerm" (search)="getRestaurants()"></ion-searchbar>
+<ion-content>    
+  <ion-refresher (ionRefresh)="getRestaurants($event)">    
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingText="Refreshing..."
+    >      
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-list>
-    <ion-item *ngFor="let restaurant of restaurants" text-wrap>
+    <ion-item *ngFor="let restaurant of restaurants" (tap)="showDetails(restaurant)" text-wrap>
       <ion-grid>
         <ion-row>
           <ion-col width-25>

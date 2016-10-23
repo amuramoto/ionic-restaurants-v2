@@ -1,0 +1,10 @@
+<ion-item>  
+  <p>
+    <img [src]="reviewDetails.userPhoto">
+    {{reviewDetails.user}}    
+  </p>  
+  <p>
+    <ion-icon name="star" *ngFor="let star of restaurantService.getArray(reviewDetails.rating)"></ion-icon>
+  </p>
+  <p>{{reviewDetails.text}}</p>  
+</ion-item>

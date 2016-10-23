@@ -15,7 +15,8 @@ export class RestaurantService {
   
   searchTerm: string = 'Restaurants';
 
-  constructor(public http: Http, public platform: Platform) {
+  constructor(public http: Http, 
+              public platform: Platform) {
   
   }
 
@@ -24,6 +25,7 @@ export class RestaurantService {
       this.platform.ready().then(
         () => Geolocation.getCurrentPosition().then(
           location => {
+            console.log('ok')
             this.apiRequest(searchTerm, location).subscribe(
               res => {
                 observer.next(res.results);
@@ -37,7 +39,7 @@ export class RestaurantService {
   }
 
 
-  apiRequest(searchTerm: string, location?: Object): Observable<any> {
+  apiRequest(searchTerm: string, location?: Object): Observable<any> {    
     let url = 'http://ionic-workshop-api.herokuapp.com/search';
     let query = `?lat=${location['coords']['latitude']}&long=${location['coords']['longitude']}`;
     

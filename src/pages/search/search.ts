@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, Platform, NavParams } from 'ionic-angular';
-import { Http } from '@angular/http';
-import 'rxjs/Rx';
+import { NavController } from 'ionic-angular';
 import { RestaurantService } from '../../providers/restaurant-service';
+import { Keyboard } from 'ionic-native';
+import { Details } from '../details/details';
 
 @Component({
   selector: 'page-search',
@@ -14,8 +14,7 @@ export class Search {
   searchTerm: string;
 
   constructor(public navCtrl: NavController, 
-              public restaurantService: RestaurantService,
-              public navParams: NavParams) {
+              public restaurantService: RestaurantService) {
     
   }
 
@@ -25,13 +24,17 @@ export class Search {
     this.getRestaurants();
   }
 
-  ionViewDidEnter() {
-    console.log(this.navParams.data);
+  getRestaurants(refresher?: any) {    
+    Keyboard.close();
+    this.restaurantService.getRestaurants(this.searchTerm)
+      .subscribe(res => {
+        this.restaurants = res;
+        refresher.complete();
+      });
   }
 
-  getRestaurants() {
-    this.restaurantService.getRestaurants(this.searchTerm)
-      .subscribe(res => this.restaurants = res);
+  showDetails(details: Object) {
+    this.navCtrl.push(Details, details);
   }
 
 }
