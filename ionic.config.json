@@ -1,6 +1,6 @@
 {
   "name": "ionic-restaurants-v2",
-  "app_id": "",
+  "app_id": "ionic-eats",
   "v2": true,
   "typescript": true
 }

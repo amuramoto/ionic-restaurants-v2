@@ -13,7 +13,6 @@ import { Review } from '../components/review/review';
     MyApp,
     HomePage,
     Search,
-    User,
     Nearby,
     Details,
     Review
@@ -26,7 +25,6 @@ import { Review } from '../components/review/review';
     MyApp,
     HomePage,
     Search,
-    User,
     Nearby,
     Details
   ],

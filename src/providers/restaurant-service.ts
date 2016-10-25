@@ -25,7 +25,6 @@ export class RestaurantService {
       this.platform.ready().then(
         () => Geolocation.getCurrentPosition().then(
           location => {
-            console.log('ok')
             this.apiRequest(searchTerm, location).subscribe(
               res => {
                 observer.next(res.results);
