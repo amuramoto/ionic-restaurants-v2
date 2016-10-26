@@ -20,7 +20,6 @@ export class Search {
 
 
   ionViewWillEnter() {    
-    this.restaurants = [];
     this.searchTerm = this.restaurantService.getSearchTerm();
     this.getRestaurants();
   }

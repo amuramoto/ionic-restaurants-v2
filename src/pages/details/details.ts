@@ -22,20 +22,17 @@ export class Details {
     this.restaurant = this.navParams.data;
   }
 
-ionViewDidLoad() {  
-  this.tab.parent.ionChange
-    .subscribe(newTab => {      
-      let tabTitle = newTab.tabTitle;
-      let component = newTab.getActive().component;
-if(tabTitle == 'search'  && component !== Search) {
-  this.navCtrl.push(Search);
-}
-      // let title = newTab.tabTitle;     
-      // if (title !== 'search') {        
-      //   this.navCtrl.push(Search)
-      // }
-    })
-}
+  ionViewDidLoad() {  
+    this.tab.parent.ionChange
+      .subscribe(newTab => {      
+        let tabTitle = newTab.tabTitle;
+        let component = newTab.getActive().component;
+        if(tabTitle == 'search'  && component !== Search) {
+          this.navCtrl.push(Search);
+        }
+      })
+  }
+
   isActive(index: number) {
     if (this.restaurant.rating >= index) {
       return true;
