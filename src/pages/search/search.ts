@@ -29,7 +29,9 @@ export class Search {
     this.restaurantService.getRestaurants(this.searchTerm)
       .subscribe(res => {
         this.restaurants = res;
-        refresher.complete();
+        if (refresher) {
+          refresher.complete();
+        }
       });
   }
 
