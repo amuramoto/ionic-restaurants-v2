@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, Tab } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Review } from '../../components/review/review';
 import { Search } from '../search/search';  
 /*
@@ -18,19 +18,8 @@ export class Details {
   stars: Array<any> = new Array(5);
 
   constructor(public navCtrl: NavController, 
-              public navParams: NavParams, public tab: Tab) {
+              public navParams: NavParams) {
     this.restaurant = this.navParams.data;
-  }
-
-  ionViewDidLoad() {  
-    this.tab.parent.ionChange
-      .subscribe(newTab => {      
-        let tabTitle = newTab.tabTitle;
-        let component = newTab.getActive().component;
-        if(tabTitle == 'search'  && component !== Search) {
-          this.navCtrl.push(Search);
-        }
-      })
   }
 
   isActive(index: number) {
