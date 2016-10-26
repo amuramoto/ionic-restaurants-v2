@@ -23,7 +23,7 @@
     </ion-refresher-content>
   </ion-refresher>
   <ion-list>
-    <ion-item *ngFor="let restaurant of restaurants" (tap)="showDetails(restaurant)" text-wrap>
+    <button ion-item *ngFor="let restaurant of restaurants" (tap)="showDetails(restaurant)" text-wrap detail-none>
       <ion-grid>
         <ion-row>
           <ion-col width-25>
@@ -44,6 +44,6 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-    </ion-item>
+    </button>
   </ion-list>
 </ion-content>

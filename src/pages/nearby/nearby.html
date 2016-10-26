@@ -15,10 +15,10 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let searchTerm of searchTerms" (tap)="search(searchTerm.term)" detail-push>
+    <button ion-item *ngFor="let searchTerm of searchTerms" (tap)="search(searchTerm.term)">
       <ion-icon [name]="searchTerm.icon"></ion-icon>
       {{searchTerm.term}}
-    </ion-item>
+    </button>
   </ion-list>
   <ion-card *ngFor="let restaurant of restaurants" (tap)="showDetails(restaurant)">
     <img [src]="restaurant.photos[0].original">

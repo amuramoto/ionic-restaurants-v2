@@ -22,7 +22,21 @@ export class Details {
     this.restaurant = this.navParams.data;
   }
 
-  isHighlighted(index: number) {
+ionViewDidLoad() {  
+  this.tab.parent.ionChange
+    .subscribe(newTab => {      
+      let tabTitle = newTab.tabTitle;
+      let component = newTab.getActive().component;
+if(tabTitle == 'search'  && component !== Search) {
+  this.navCtrl.push(Search);
+}
+      // let title = newTab.tabTitle;     
+      // if (title !== 'search') {        
+      //   this.navCtrl.push(Search)
+      // }
+    })
+}
+  isActive(index: number) {
     if (this.restaurant.rating >= index) {
       return true;
     }
