@@ -10,7 +10,7 @@ import { Details } from '../details/details';
 })
 export class Search {
 
-  restaurants: Array<Object>;
+  restaurants: Array<any> = new Array(10);
   searchTerm: string;
 
   constructor(public navCtrl: NavController, 

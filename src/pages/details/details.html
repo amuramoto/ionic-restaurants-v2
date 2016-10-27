@@ -33,6 +33,7 @@
   
   <div class="reviews">
     <h3>Reviews</h3>
-    <review *ngFor="let review of restaurant.reviews" [reviewDetails]="review"></review>
+    <p *ngIf="restaurant.reviews.length==0">No reviews yet =(</p>
+    <review *ngIf="restaurant.reviews.length>0" *ngFor="let review of restaurant.reviews" [reviewDetails]="review"></review>
   </div>
 </ion-content>
