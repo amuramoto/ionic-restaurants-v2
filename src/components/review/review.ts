@@ -12,7 +12,7 @@ import { RestaurantService } from '../../providers/restaurant-service';
 })
 export class Review {
 
-  @Input() reviewDetails: Object;
+  @Input() reviewDetails: any;
 
   constructor(public restaurantService:RestaurantService) {
     

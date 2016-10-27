@@ -4,8 +4,13 @@ page-details {
     background-color: #EEEEEE!important;
   }
 
-  .active {
-    color: red;
+  ion-scroll {
+    width: 100%;
+    height: 75px;
+    white-space: nowrap;
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   .info {
@@ -27,15 +32,6 @@ page-details {
     }
   }
 
-  ion-scroll {
-    width: 100%;
-    height: 75px;
-    white-space: nowrap;
-    ::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
   .reviews, .photos {
     
     background-color: #FFFFFF;
@@ -46,5 +42,9 @@ page-details {
       padding-left: 15px;
       margin-bottom: 15px;
     }
+  }
+
+  .active {
+    color: red;
   }
 }

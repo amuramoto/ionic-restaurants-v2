@@ -3,7 +3,6 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Search } from '../pages/search/search';
-import { User } from '../pages/user/user';
 import { Nearby } from '../pages/nearby/nearby';
 import { Details } from '../pages/details/details';
 import { RestaurantService } from '../providers/restaurant-service';

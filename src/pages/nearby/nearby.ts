@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RestaurantService } from '../../providers/restaurant-service';
 import { Details } from '../details/details';
+import { Search } from '../search/search';
 
 @Component({
   selector: 'page-nearby',
@@ -27,7 +28,7 @@ export class Nearby {
 
   search(searchTerm?: string) {
     this.restaurantService.setSearchTerm(searchTerm);
-    this.navCtrl.parent.select(1);
+    this.navCtrl.push(Search);
   }
 
   showDetails(details: Object) {
