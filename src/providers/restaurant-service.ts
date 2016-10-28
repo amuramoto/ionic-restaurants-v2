@@ -45,7 +45,7 @@ export class RestaurantService {
     if (searchTerm) {
       query += `&q=${searchTerm}`;
     }
-console.log(url + query);
+
     return this.http.get(url + query)
       .map(res => res.json())      
   }
