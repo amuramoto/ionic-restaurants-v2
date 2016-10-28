@@ -27,8 +27,7 @@ export class Nearby {
   }
 
   search(searchTerm?: string) {
-    this.restaurantService.setSearchTerm(searchTerm);
-    this.navCtrl.push(Search);
+    this.navCtrl.push(Search, {searchTerm: searchTerm});
   }
 
   showDetails(details: Object) {

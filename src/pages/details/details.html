@@ -34,6 +34,8 @@
   <div class="reviews">
     <h3>Reviews</h3>
     <p *ngIf="restaurant.reviews.length==0">No reviews yet =(</p>
-    <review *ngIf="restaurant.reviews.length>0" *ngFor="let review of restaurant.reviews" [reviewDetails]="review"></review>
+    <div *ngIf="restaurant.reviews.length>0">
+      <review *ngFor="let review of restaurant.reviews" [reviewDetails]="review"></review>
+    </div>
   </div>
 </ion-content>

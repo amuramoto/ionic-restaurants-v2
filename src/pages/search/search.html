@@ -23,7 +23,7 @@
     </ion-refresher-content>
   </ion-refresher>
   <ion-list>
-    <button ion-item *ngFor="let restaurant of restaurants" (tap)="showDetails(restaurant)" text-wrap detail-none>
+    <ion-item *ngFor="let restaurant of restaurants" (tap)="showDetails(restaurant)" text-wrap detail-none>
       <ion-grid>
         <ion-row>
           <ion-col width-25>
@@ -43,7 +43,7 @@
             <p><ion-icon name="logo-usd" *ngFor="let usd of restaurantService.getArray(restaurant.price)"></ion-icon></p>
           </ion-col>
         </ion-row>
-      </ion-grid>
-    </button>
+      </ion-grid>      
+    </ion-item>
   </ion-list>
 </ion-content>

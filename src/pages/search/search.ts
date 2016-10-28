@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { RestaurantService } from '../../providers/restaurant-service';
 import { Keyboard } from 'ionic-native';
 import { Details } from '../details/details';
@@ -10,25 +10,28 @@ import { Details } from '../details/details';
 })
 export class Search {
 
-  restaurants: Array<any> = new Array(10);
-  searchTerm: string;
+  restaurants: Array<any>;
+  searchTerm: string = 'Restaurants';
 
-  constructor(public navCtrl: NavController, 
-              public restaurantService: RestaurantService) {
-    
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams, 
+              public restaurantService: RestaurantService) {    
   }
 
-
-  ionViewWillEnter() {    
-    this.searchTerm = this.restaurantService.getSearchTerm();
+  ionViewWillEnter() {  
+    let searchTerm = this.navParams.get('searchTerm');
+    if (searchTerm) {
+      this.searchTerm = searchTerm;
+    }  
     this.getRestaurants();
   }
 
   getRestaurants(refresher?: any) {    
     Keyboard.close();
     this.restaurantService.getRestaurants(this.searchTerm)
-      .subscribe(res => {
+      .subscribe(res => {                
         this.restaurants = res;
+
         if (refresher) {
           refresher.complete();
         }
