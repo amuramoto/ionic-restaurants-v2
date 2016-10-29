@@ -11,7 +11,7 @@ import { Details } from '../details/details';
 export class Search {
 
   restaurants: Array<any>;
-  searchTerm: string = 'Restaurants';
+  searchTerm: string = 'Beer';
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams, 
@@ -19,10 +19,6 @@ export class Search {
   }
 
   ionViewWillEnter() {  
-    let searchTerm = this.navParams.get('searchTerm');
-    if (searchTerm) {
-      this.searchTerm = searchTerm;
-    }  
     this.getRestaurants();
   }
 

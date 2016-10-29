@@ -14,12 +14,6 @@
 
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let searchTerm of searchTerms" (tap)="search(searchTerm.term)">
-      <ion-icon [name]="searchTerm.icon"></ion-icon>
-      {{searchTerm.term}}
-    </button>
-  </ion-list>
   <ion-card *ngFor="let restaurant of restaurants" (tap)="showDetails(restaurant)">
     <img [src]="restaurant.photos[0].original">
     <ion-card-content>        
@@ -31,6 +25,5 @@
         {{restaurant.reviewCount}} Reviews
       </p>
     </ion-card-content>
-  </ion-card>
-  
+  </ion-card>  
 </ion-content>
