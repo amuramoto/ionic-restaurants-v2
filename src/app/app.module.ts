@@ -7,6 +7,8 @@ import { Nearby } from '../pages/nearby/nearby';
 import { Details } from '../pages/details/details';
 import { RestaurantService } from '../providers/restaurant-service';
 import { Review } from '../components/review/review';
+import { ImageModal } from '../components/image-modal/image-modal';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -14,7 +16,8 @@ import { Review } from '../components/review/review';
     Search,
     Nearby,
     Details,
-    Review
+    Review,
+    ImageModal
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -25,7 +28,8 @@ import { Review } from '../components/review/review';
     HomePage,
     Search,
     Nearby,
-    Details
+    Details,
+    ImageModal
   ],
   providers: [RestaurantService]
 })

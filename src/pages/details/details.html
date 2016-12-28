@@ -27,7 +27,7 @@
   <div class="photos">
     <h3>Pictures</h3>
     <ion-scroll scrollX="true">
-      <img [src]="photo.thumbnail" *ngFor="let photo of restaurant.photos">
+      <img [src]="photo.thumbnail" *ngFor="let photo of restaurant.photos" tappable (click)="showImage(restaurant.name, photo)">
     </ion-scroll>
   </div>
   

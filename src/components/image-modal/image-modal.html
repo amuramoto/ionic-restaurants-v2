@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="ionic">
+    <ion-buttons start>
+      <button ion-button navPop>
+        Close
+      </button>
+    </ion-buttons>
+    <ion-title>{{name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>  
+  <img class="image" [src]="imageObj.original">
+  <ion-item no-padding no-lines>
+    <ion-avatar item-left>
+      <img [src]="imageObj.userPhoto">
+    </ion-avatar>
+    {{imageObj.user}}
+  </ion-item>
+</ion-content>
