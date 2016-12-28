@@ -19,6 +19,7 @@ The app uses these features from Ionic 2:
 - push/pop nav
 - modal
 - avatar
+- slides
 - utility attributes
 
 ## Getting Started
