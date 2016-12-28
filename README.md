@@ -32,7 +32,9 @@ If you want to run this on a device, you'll have to do the song and dance of eit
 
 This app has a two tab UI, one that shows nearby restaurants and one that allows you to search. All data is proxied through a little Express API I built that pulls from the [Foursquare API](https://developer.foursquare.com/). You can also tap on any of the results to see a detail view that includes a swipeable row of thumbnail images of the place.
 
-![geolocation request](https://raw.githubusercontent.com/amuramoto/ionic-restaurants-v2/master/img/IMG_1860.PNG)![nearby list view](https://raw.githubusercontent.com/amuramoto/ionic-restaurants-v2/master/img/IMG_1861.PNG)![search list view](https://raw.githubusercontent.com/amuramoto/ionic-restaurants-v2/master/img/IMG_1863.PNG)![place details view](https://raw.githubusercontent.com/amuramoto/ionic-restaurants-v2/master/img/IMG_1862.PNG)
+![geolocation request](https://raw.githubusercontent.com/amuramoto/ionic-restaurants-v2/master/img/IMG_1860.PNG)!  [nearby list view](https://raw.githubusercontent.com/amuramoto/ionic-restaurants-v2/master/img/IMG_1861.PNG)!
+
+[search list view](https://raw.githubusercontent.com/amuramoto/ionic-restaurants-v2/master/img/IMG_1863.PNG)!  [place details view](https://raw.githubusercontent.com/amuramoto/ionic-restaurants-v2/master/img/IMG_1862.PNG)
 
 ## Please Be Kind to My API
 
