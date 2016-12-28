@@ -11,7 +11,7 @@ import { Details } from '../details/details';
 export class Search {
 
   restaurants: Array<any>;
-  searchTerm: string = 'Beer';
+  searchTerm: string = 'Pizza';
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams, 
