@@ -20,7 +20,7 @@ export class Details {
   }
 
   showImage(name: string, photos: Array<any>, startIndex: number) {
-    let imgModal = this.modalCtrl.create(ImageModal, {name: name, photos: photos, startIndex: startIndex});
+    let imgModal = this.modalCtrl.create(ImageModal, {name: this.restaurant.shortname, photos: photos, startIndex: startIndex});
     imgModal.present();
   }
 
@@ -29,7 +29,7 @@ export class Details {
     if (name.length > 20) {
       name = name.slice(0, 19) + '...';       
     }
-    this.restaurant.name = name;
+    this.restaurant.shortname = name;
   }
 
   isActive(index: number) {

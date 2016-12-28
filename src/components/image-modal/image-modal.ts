@@ -21,8 +21,7 @@ export class ImageModal {
     this.name = params.data.name;
     this.slideOptions = {
       initialSlide: params.data.startIndex,
-      loop: true,
-      pager: true
+      loop: true
     }
   }
 
