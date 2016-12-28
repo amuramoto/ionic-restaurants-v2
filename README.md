@@ -17,6 +17,9 @@ The app uses these features from Ionic 2:
 - ionicons
 - Ionic Native
 - push/pop nav
+- modal
+- avatar
+- utility attributes
 
 ## Getting Started
 
