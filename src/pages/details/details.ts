@@ -19,12 +19,8 @@ export class Details {
     this.shortenName();
   }
 
-ionViewDidEnter(){
-  console.log(this.restaurant);
-}
-
-  showImage(name: string, imageObj: any) {
-    let imgModal = this.modalCtrl.create(ImageModal, {name: name, imageObj: imageObj});
+  showImage(name: string, photos: Array<any>, startIndex: number) {
+    let imgModal = this.modalCtrl.create(ImageModal, {name: name, photos: photos, startIndex: startIndex});
     imgModal.present();
   }
 

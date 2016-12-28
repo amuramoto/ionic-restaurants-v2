@@ -12,12 +12,18 @@ import { NavParams } from 'ionic-angular';
 })
 export class ImageModal {
 
-  imageObj: any;
+  photos: Array<any>;
   name: string;
+  slideOptions: any;
 
   constructor(params: NavParams) {
-    this.imageObj = params.data.imageObj;
+    this.photos = params.data.photos;
     this.name = params.data.name;
+    this.slideOptions = {
+      initialSlide: params.data.startIndex,
+      loop: true,
+      pager: true
+    }
   }
 
 }

@@ -10,11 +10,15 @@
 </ion-header>
 
 <ion-content padding>  
-  <img class="image" [src]="imageObj.original">
-  <ion-item no-padding no-lines>
-    <ion-avatar item-left>
-      <img [src]="imageObj.userPhoto">
-    </ion-avatar>
-    {{imageObj.user}}
-  </ion-item>
+  <ion-slides [options]="slideOptions">
+    <ion-slide *ngFor="let photo of photos">
+      <img class="image" [src]="photo.original">
+      <ion-item no-padding no-lines>
+        <ion-avatar item-left>
+          <img [src]="photo.userPhoto">
+        </ion-avatar>
+        {{photo.user}}
+      </ion-item>
+    </ion-slide>    
+  </ion-slides>  
 </ion-content>

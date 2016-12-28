@@ -1,3 +1,17 @@
 image-modal {
-  width: 100%;
+  
+  .swiper-slide img.image {
+    border: #FFFFFF 1px solid;
+  }
+
+  .swiper-slide img.image, ion-item.item {
+    width: 90%;
+    margin: 0 auto;
+    color: #FFFFFF;    
+  }
+
+  &.ion-page > ion-content, ion-item.item {
+    background-color: #1D1D1D;
+  }
+
 }
