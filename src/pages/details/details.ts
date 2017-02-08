@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
-import { Review } from '../../components/review/review';
 import { ImageModal } from '../../components/image-modal/image-modal';
 
 @Component({
